@@ -58,7 +58,7 @@ public class HomeFragment extends Fragment {
 		// Tambahkan logic tombol di bagian bawah ini
 		sharedScore.getScoreHome().observe(requireActivity(), new Observer<Integer>() {
 			@Override
-			public void onChanged(Integer integer) {
+			public void onChanged(Integer score) {
 				scoreHome.setText(String.valueOf(score));
 				scoreDefault = score;
 			}

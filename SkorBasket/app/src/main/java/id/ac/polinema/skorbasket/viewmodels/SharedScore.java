@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 public class SharedScore extends AndroidViewModel {
@@ -27,16 +28,16 @@ public class SharedScore extends AndroidViewModel {
         return scoreHome;
     }
 
-    public void setScoreHome(MutableLiveData<Integer> scoreHome) {
-        this.scoreHome = scoreHome;
+    public void setScoreHome(Integer score) {
+        scoreHome.setValue(score);
     }
 
     public MutableLiveData<Integer> getScoreVisitor() {
         return scoreVisitor;
     }
 
-    public void setScoreVisitor(MutableLiveData<Integer> scoreVisitor) {
-        this.scoreVisitor = scoreVisitor;
+    public void setScoreVisitor(Integer score) {
+        scoreVisitor.setValue(score);
     }
 
     public MutableLiveData<Boolean> getWinner() {
